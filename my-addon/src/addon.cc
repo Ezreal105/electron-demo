@@ -30,7 +30,7 @@ Napi::Value Add(const Napi::CallbackInfo& info) {
     int b = info[1].As<Napi::Number>().Int32Value();
 
     HMODULE module;
-    if (!loadLibrary("test.dll", module)) {
+    if (!loadLibrary("tis_udshl12_x64.dll", module)) {
         Napi::TypeError::New(env, "Failed to load dll").ThrowAsJavaScriptException();
         return env.Null();
     }
