@@ -1,4 +1,4 @@
-#include <node_api.h>
+#include <napi.h>
 #include <Windows.h>
 
 bool loadLibrary(const char* dllPath, HMODULE& module) {
@@ -20,14 +20,12 @@ bool freeLibrary(HMODULE& module) {
 
 typedef int(*AddFunction)(int, int);
 
-napi_value Add(napi_env env, napi_callback_info info) {
-  
+Napi::Value Add(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
     if (info.Length() < 2 || !info[0].IsNumber() || !info[1].IsNumber()) {
         Napi::TypeError::New(env, "Number expected").ThrowAsJavaScriptException();
         return env.Null();
     }
-    napi_value result;
-    napi_status status;
     int a = info[0].As<Napi::Number>().Int32Value();
     int b = info[1].As<Napi::Number>().Int32Value();
 
@@ -44,26 +42,16 @@ napi_value Add(napi_env env, napi_callback_info info) {
         return env.Null();
     }
 
-    int calc_result = addFunction(a, b);
+    int result = addFunction(a, b);
 
     freeLibrary(module);
 
-    status = napi_create_int64(env, calc_result, &result);
-    if (status != napi_ok) return NULL;
-    return result;
+    return Napi::Number::New(env, result);
 }
 
-
-napi_value Init(napi_env env, napi_value exports) {
-  napi_status status;
-  napi_value fn;
-
-  status = napi_create_function(env, NULL, 0, Add, NULL, &fn);
-  if (status != napi_ok) return NULL;
-
-  status = napi_set_named_property(env, exports, "hello", fn);
-  if (status != napi_ok) return NULL;
-  return exports;
+Napi::Object Init(Napi::Env env, Napi::Object exports) {
+    exports.Set("add", Napi::Function::New(env, Add));
+    return exports;
 }
 
-NAPI_MODULE(NODE_GYP_MODULE_NAME, Init)
+NODE_API_MODULE(test, Init);
