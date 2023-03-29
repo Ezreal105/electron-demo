@@ -37,7 +37,7 @@ max_jobs: 1
 #---------------------------------#
 
 # Build worker image (VM template)
-image: Visual Studio 2017
+image: Visual Studio 2015
 
 environment:
   matrix:
@@ -91,7 +91,7 @@ install:
       Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version) $env:platform
       }
   - node -v
-  - npm config set msvs_version 2017
+  - npm config set msvs_version 2015
 
 #---------------------------------#
 #       build configuration       #
