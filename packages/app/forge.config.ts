@@ -10,7 +10,11 @@ import { rendererConfig } from "./webpack.renderer.config";
 
 const config: ForgeConfig = {
   packagerConfig: {},
-  rebuildConfig: {},
+  rebuildConfig: {
+    force: true,
+    debug: true,
+    mode: "parallel",
+  },
   makers: [
     new MakerSquirrel({}),
     new MakerZIP({}, ["darwin"]),
