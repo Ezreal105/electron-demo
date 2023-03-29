@@ -188,10 +188,12 @@ const listrPackage = ({
             forgeConfig.packagerConfig.prune;
           const afterCopyHooks = [
             async (buildPath, electronVersion, platform, arch, done) => {
+              console.log("[wsttest] afterCopyHook1");
               signalDone(signalCopyDone, { platform, arch });
               done();
             },
             async (buildPath, electronVersion, pPlatform, pArch, done) => {
+              console.log("[wsttest] afterCopyHook2");
               const bins = await (0, fast_glob_1.default)(
                 path_1.default.join(buildPath, "**/.bin/**/*")
               );
@@ -201,6 +203,7 @@ const listrPackage = ({
               done();
             },
             async (buildPath, electronVersion, pPlatform, pArch, done) => {
+              console.log("[wsttest] afterCopyHook3");
               await (0, hook_1.runHook)(
                 forgeConfig,
                 "packageAfterCopy",
@@ -212,6 +215,7 @@ const listrPackage = ({
               done();
             },
             async (buildPath, electronVersion, pPlatform, pArch, done) => {
+              console.log("[wsttest] afterCopyHook4");
               var _a, _b;
               const targetKey = getTargetKey({
                 platform: pPlatform,
@@ -433,7 +437,7 @@ const listrPackage = ({
                           {
                             title: "Preparing native dependencies",
                             task: async (_, task) => {
-                              console.log("[wsttest] Fuck");
+                              console.log("[wsttest] Fuck", target);
                               var _a, _b;
                               (_b =
                                 (_a = signalRebuildStart.get(
