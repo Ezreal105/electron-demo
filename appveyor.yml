@@ -114,5 +114,5 @@ build_script: build.cmd
 #      artifacts configuration    #
 #---------------------------------#
 artifacts:
-  - path: "pacakges/app/out/make/*.*"
+  - path: "packages/app/out/make/*.*"
     name: "Electron-Demo"
