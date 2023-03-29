@@ -84,6 +84,7 @@ install:
       Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version) $env:platform
       }
   - node -v
+  - set GYP_MSVS_VERSION=2015
   - npm config set msvs_version 2015
   - npm cache clean -f
 

@@ -1,5 +1,4 @@
 echo building...
-set GYP_MSVS_VERSION=2015 ^
 npm -v^
 npm --prefix ./packages/addon/ i^
 npm --prefix ./packages/addon/ run build^
