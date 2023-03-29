@@ -42,6 +42,7 @@ image: Visual Studio 2019
 # scripts that are called at very beginning, before repo cloning
 init:
   - git config --global core.autocrlf input
+  - npm config set msvs_version 2019
 
 # clone directory
 clone_folder: c:\projects\myproject
@@ -98,7 +99,7 @@ configuration: Release
 
 # to run your custom scripts instead of automatic MSBuild
 build_script:
-  - sh: echo hh
+  - sh: ./build.sh
 # to disable automatic builds
 #build: off
 

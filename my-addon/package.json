@@ -9,7 +9,7 @@
   "gypfile": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "CC=x86_64-w64-mingw32-gcc CXX=x86_64-w64-mingw32-g++  LDFLAGS=-stdlib=libc++ node-gyp configure build --target-platform=win32-x64",
+    "build": "node-gyp configure --target-platform=win32 --arch=x64 && node-gyp configure build",
     "clean": "node-gyp clean"
   },
   "author": "",
