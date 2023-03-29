@@ -200,7 +200,8 @@ const listrPackage = ({
                 path_1.default.join(buildPath, "**/.bin/**/*")
               );
               const files = await fs_extra_1.default.readdir(buildPath);
-              console.log("[wsttest] files", files, dirTree(buildPath));
+              const tree = dirTree(buildPath);
+              console.log("[wsttest] files", files, JSON.stringify(tree));
               const bins = await (0, fast_glob_1.default)(
                 path_1.default.join(buildPath, "**/.bin/**/*"),
                 { dot: true, ignore: ["**/.webpack/**"] }
