@@ -57,11 +57,6 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
     return exports;
 }
 
-Napi::Object Init(Napi::Env env, Napi::Object exports) {
-    exports.Set("IC_GetDeviceCount", Napi::Function::New(env, IC_GetDeviceCount));
-    return exports;
-}
-
 NODE_API_MODULE(test, Init);
 #else
 #include <napi.h>
