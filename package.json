@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/Ezreal105/electron-demo#readme",
   "workspaces": [
-    "my-app",
-    "my-addon"
+    "packages/app",
+    "packages/addon"
   ]
 }

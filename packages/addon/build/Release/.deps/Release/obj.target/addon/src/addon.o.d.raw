@@ -1,7 +1,7 @@
 Release/obj.target/addon/src/addon.o: ../src/addon.cc \
-  /Users/lotus/lts-project/electron-demo/my-addon/node_modules/node-addon-api/napi.h \
-  /Users/lotus/.electron-gyp/23.2.0/include/node/node_api.h \
-  /Users/lotus/.electron-gyp/23.2.0/include/node/js_native_api.h \
+  /Users/lotus/lts-project/electron-demo/node_modules/node-addon-api/napi.h \
+  /Users/lotus/Library/Caches/node-gyp/18.10.0/include/node/node_api.h \
+  /Users/lotus/Library/Caches/node-gyp/18.10.0/include/node/js_native_api.h \
   /usr/local/Cellar/mingw-w64/10.0.0_5/toolchain-x86_64/x86_64-w64-mingw32/include/pthread.h \
   /usr/local/Cellar/mingw-w64/10.0.0_5/toolchain-x86_64/x86_64-w64-mingw32/include/stddef.h \
   /usr/local/Cellar/mingw-w64/10.0.0_5/toolchain-x86_64/x86_64-w64-mingw32/include/crtdefs.h \
@@ -11,11 +11,11 @@ Release/obj.target/addon/src/addon.o: ../src/addon.cc \
   /usr/local/Cellar/mingw-w64/10.0.0_5/toolchain-x86_64/x86_64-w64-mingw32/include/_mingw_secapi.h \
   /usr/local/Cellar/mingw-w64/10.0.0_5/toolchain-x86_64/x86_64-w64-mingw32/include/vadefs.h \
   /usr/local/Cellar/mingw-w64/10.0.0_5/toolchain-x86_64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
-  /Users/lotus/.electron-gyp/23.2.0/include/node/js_native_api_types.h \
+  /Users/lotus/Library/Caches/node-gyp/18.10.0/include/node/js_native_api_types.h \
   /usr/local/Cellar/mingw-w64/10.0.0_5/toolchain-x86_64/x86_64-w64-mingw32/include/stdint.h \
-  /Users/lotus/.electron-gyp/23.2.0/include/node/node_api_types.h \
-  /Users/lotus/lts-project/electron-demo/my-addon/node_modules/node-addon-api/napi-inl.h \
-  /Users/lotus/lts-project/electron-demo/my-addon/node_modules/node-addon-api/napi-inl.deprecated.h \
+  /Users/lotus/Library/Caches/node-gyp/18.10.0/include/node/node_api_types.h \
+  /Users/lotus/lts-project/electron-demo/node_modules/node-addon-api/napi-inl.h \
+  /Users/lotus/lts-project/electron-demo/node_modules/node-addon-api/napi-inl.deprecated.h \
   /usr/local/Cellar/mingw-w64/10.0.0_5/toolchain-x86_64/x86_64-w64-mingw32/include/Windows.h \
   /usr/local/Cellar/mingw-w64/10.0.0_5/toolchain-x86_64/x86_64-w64-mingw32/include/sdkddkver.h \
   /usr/local/Cellar/mingw-w64/10.0.0_5/toolchain-x86_64/x86_64-w64-mingw32/include/excpt.h \

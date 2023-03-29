@@ -1,5 +1,5 @@
 {
-  "name": "my-addon",
+  "name": "addon",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "gypfile": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node-gyp configure --target-platform=win32 --arch=x64 && node-gyp configure build",
+    "build": "node-gyp configure && node-gyp build",
     "clean": "node-gyp clean"
   },
   "author": "",

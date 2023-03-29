@@ -1,3 +1,0 @@
-echo building...
-
-npm -v
