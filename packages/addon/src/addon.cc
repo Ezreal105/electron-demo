@@ -1,3 +1,4 @@
+#ifdef _WIN32
 #include <napi.h>
 #include <node_api.h>
 #include <Windows.h>
@@ -51,3 +52,21 @@ Napi::Object Init(Napi::Env env, Napi::Object exports) {
 }
 
 NODE_API_MODULE(test, Init);
+#else
+#include <napi.h>
+#include <node_api.h>
+
+Napi::Value IC_GetDeviceCount(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
+
+    return Napi::Number::New(env, -1);
+}
+
+Napi::Object Init(Napi::Env env, Napi::Object exports) {
+    exports.Set("IC_GetDeviceCount", Napi::Function::New(env, IC_GetDeviceCount));
+    return exports;
+}
+
+NODE_API_MODULE(test, Init);
+#endif
+
