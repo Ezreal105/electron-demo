@@ -29,9 +29,9 @@
 import "./index.css";
 
 // eslint-disable-next-line import/no-unresolved
-import ic from "my-addon/build/Release/addon.node";
+// import ic from "my-addon/build/Release/addon.node";
 
-(globalThis as any)._ic = ic;
+// (globalThis as any)._ic = ic;
 
 const infoDiv = document.createElement("div");
 const button = document.createElement("button");
