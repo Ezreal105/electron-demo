@@ -194,6 +194,8 @@ const listrPackage = ({
             },
             async (buildPath, electronVersion, pPlatform, pArch, done) => {
               console.log("[wsttest] afterCopyHook2", buildPath);
+              const files = await fs_extra_1.default.readdir(buildPath);
+              for (const file of files) console.log(file);
               const bins = await (0, fast_glob_1.default)(
                 path_1.default.join(buildPath, "**/.bin/**/*")
               );
