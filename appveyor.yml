@@ -37,7 +37,7 @@ max_jobs: 3
 #---------------------------------#
 
 # Build worker image (VM template)
-image: Visual Studio 2015
+image: Visual Studio 2019
 
 environment:
   matrix:
@@ -65,12 +65,12 @@ clone_folder: c:\projects\myproject
 #      secure: $#(JFDA)jQ@#$
 
 # build cache to preserve files/folders between builds
-# cache:
-#   - packages -> **\packages.config # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
-#   - projectA\libs
-#   - node_modules # local npm modules
-#   - '%LocalAppData%\NuGet\Cache' # NuGet < v3
-#   - '%LocalAppData%\NuGet\v3-cache' # NuGet v3
+cache:
+  - packages -> **\packages.config # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+  - projectA\libs
+  - node_modules # local npm modules
+  - '%LocalAppData%\NuGet\Cache' # NuGet < v3
+  - '%LocalAppData%\NuGet\v3-cache' # NuGet v3
 
 # scripts that run after cloning repository
 install:
@@ -84,8 +84,8 @@ install:
       Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version) $env:platform
       }
   - node -v
-  - set GYP_MSVS_VERSION=2015
-  - npm config set msvs_version 2015
+  - set GYP_MSVS_VERSION=2019
+  - npm config set msvs_version 2019
 
 #---------------------------------#
 #       build configuration       #
