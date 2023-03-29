@@ -24,7 +24,8 @@ const read_package_json_1 = require("../util/read-package-json");
 const require_search_1 = __importDefault(require("../util/require-search"));
 const resolve_dir_1 = __importDefault(require("../util/resolve-dir"));
 const d = (0, debug_1.default)("electron-forge:packager");
-const dirTree = require("directory-tree");
+// const dirTree = require("directory-tree");
+const np = require("normalize-path");
 /**
  * Resolves hooks if they are a path to a file (instead of a `Function`).
  */
@@ -193,28 +194,26 @@ const listrPackage = ({
               done();
             },
             async (buildPath, electronVersion, pPlatform, pArch, done) => {
-              //   console.log(
-              //     "[wsttest] afterCopyHook2",
-              //     buildPath,
-              //     path_1.default.join(buildPath, "**/.bin/**/*")
-              //   );
-              //   const files = await fs_extra_1.default.readdir(buildPath);
-              //   const tree = dirTree(buildPath);
-              //   console.log("[wsttest] files", files, JSON.stringify(tree));
-              //   const bins = await (0, fast_glob_1.default)(
-              //     path_1.default.join(buildPath, "**/.bin/**/*"),
-              //     { dot: true, ignore: ["**/.webpack/**"] }
-              //   );
-              //   console.log("[wsttest] afterCopyHook2 bins", bins);
-              //   for (const bin of bins) {
-              //     console.log("[wsttest] afterCopyHook2 bin", bin);
-              //     await fs_extra_1.default.remove(bin);
-              //     console.log("[wsttest] afterCopyHook2 bin after", bin);
-              //   }
+              // console.log(
+              //   "[wsttest] afterCopyHook2",
+              //   buildPath,
+              //   path_1.default.join(buildPath, "**/.bin/**/*")
+              // );
+              // const files = await fs_extra_1.default.readdir(buildPath);
+              // const tree = dirTree(buildPath);
+              // console.log("[wsttest] files", files, JSON.stringify(tree));
+              const bins = await (0, fast_glob_1.default)(
+                np(path_1.default.join(buildPath, "**/.bin/**/*"))
+              );
+              console.log("[wsttest] afterCopyHook2 bins", bins);
+              for (const bin of bins) {
+                console.log("[wsttest] afterCopyHook2 bin", bin);
+                await fs_extra_1.default.remove(bin);
+                console.log("[wsttest] afterCopyHook2 bin after", bin);
+              }
               done();
             },
             async (buildPath, electronVersion, pPlatform, pArch, done) => {
-              console.log("[wsttest] afterCopyHook3");
               await (0, hook_1.runHook)(
                 forgeConfig,
                 "packageAfterCopy",
@@ -441,14 +440,12 @@ const listrPackage = ({
                           {
                             title: "Copying files",
                             task: async () => {
-                              console.log("[wsttest] Copying files");
                               await addSignalAndWait(signalCopyDone, target);
                             },
                           },
                           {
                             title: "Preparing native dependencies",
                             task: async (_, task) => {
-                              console.log("[wsttest] Fuck", target);
                               var _a, _b;
                               (_b =
                                 (_a = signalRebuildStart.get(
@@ -458,7 +455,6 @@ const listrPackage = ({
                                   : _a.pop()) === null || _b === void 0
                                 ? void 0
                                 : _b(task);
-                              console.log("[wsttest] Fuck 1", target);
                               await addSignalAndWait(signalRebuildDone, target);
                             },
                             options: {

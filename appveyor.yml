@@ -73,6 +73,7 @@ clone_folder: c:\projects\myproject
 #   - '%LocalAppData%\NuGet\v3-cache' # NuGet v3
 
 # scripts that run after cloning repository
+test: off
 install:
   # by default, all script lines are interpreted as batch
   - echo This is batch
