@@ -189,29 +189,28 @@ const listrPackage = ({
             forgeConfig.packagerConfig.prune;
           const afterCopyHooks = [
             async (buildPath, electronVersion, platform, arch, done) => {
-              console.log("[wsttest] afterCopyHook1");
               signalDone(signalCopyDone, { platform, arch });
               done();
             },
             async (buildPath, electronVersion, pPlatform, pArch, done) => {
-              console.log(
-                "[wsttest] afterCopyHook2",
-                buildPath,
-                path_1.default.join(buildPath, "**/.bin/**/*")
-              );
-              const files = await fs_extra_1.default.readdir(buildPath);
-              const tree = dirTree(buildPath);
-              console.log("[wsttest] files", files, JSON.stringify(tree));
-              const bins = await (0, fast_glob_1.default)(
-                path_1.default.join(buildPath, "**/.bin/**/*"),
-                { dot: true, ignore: ["**/.webpack/**"] }
-              );
-              console.log("[wsttest] afterCopyHook2 bins", bins);
-              for (const bin of bins) {
-                console.log("[wsttest] afterCopyHook2 bin", bin);
-                await fs_extra_1.default.remove(bin);
-                console.log("[wsttest] afterCopyHook2 bin after", bin);
-              }
+              //   console.log(
+              //     "[wsttest] afterCopyHook2",
+              //     buildPath,
+              //     path_1.default.join(buildPath, "**/.bin/**/*")
+              //   );
+              //   const files = await fs_extra_1.default.readdir(buildPath);
+              //   const tree = dirTree(buildPath);
+              //   console.log("[wsttest] files", files, JSON.stringify(tree));
+              //   const bins = await (0, fast_glob_1.default)(
+              //     path_1.default.join(buildPath, "**/.bin/**/*"),
+              //     { dot: true, ignore: ["**/.webpack/**"] }
+              //   );
+              //   console.log("[wsttest] afterCopyHook2 bins", bins);
+              //   for (const bin of bins) {
+              //     console.log("[wsttest] afterCopyHook2 bin", bin);
+              //     await fs_extra_1.default.remove(bin);
+              //     console.log("[wsttest] afterCopyHook2 bin after", bin);
+              //   }
               done();
             },
             async (buildPath, electronVersion, pPlatform, pArch, done) => {
