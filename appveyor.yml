@@ -47,6 +47,8 @@ environment:
 # scripts that are called at very beginning, before repo cloning
 init:
   - git config --global core.autocrlf input
+  - node -v
+  - npm -g install npm@7
   - npm config set msvs_version 2015
 
 # clone directory
