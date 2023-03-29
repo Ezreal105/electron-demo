@@ -27,9 +27,9 @@
  */
 
 import "./index.css";
-import m from "my-addon/build/Release/addon.node";
+// import m from "my-addon/build/Release/addon.node";
 
-globalThis._m = m;
+// globalThis._m = m;
 
 console.log(
   '👋 This message is being logged by "renderer.js", included via webpack'
