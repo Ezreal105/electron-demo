@@ -1,2 +1,2 @@
 echo building...
-npm -v & npm i & npm run build --workspace=addon & npm run build --workspace=app
+npm -v & npm i & npm --prefix ./packages/addon/ run build & npm  --prefix ./packages/app/ run build
