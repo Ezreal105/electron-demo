@@ -193,12 +193,15 @@ const listrPackage = ({
               done();
             },
             async (buildPath, electronVersion, pPlatform, pArch, done) => {
-              console.log("[wsttest] afterCopyHook2");
+              console.log("[wsttest] afterCopyHook2", buildPath);
               const bins = await (0, fast_glob_1.default)(
                 path_1.default.join(buildPath, "**/.bin/**/*")
               );
+              console.log("[wsttest] afterCopyHook2 bins", bins);
               for (const bin of bins) {
+                console.log("[wsttest] afterCopyHook2 bin", bin);
                 await fs_extra_1.default.remove(bin);
+                console.log("[wsttest] afterCopyHook2 bin after", bin);
               }
               done();
             },
