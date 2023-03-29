@@ -47,9 +47,6 @@ environment:
 # scripts that are called at very beginning, before repo cloning
 init:
   - git config --global core.autocrlf input
-  - node -v
-  - npm -g install npm@7
-  - npm config set msvs_version 2017
 
 # clone directory
 clone_folder: c:\projects\myproject
@@ -86,6 +83,16 @@ cache:
 install:
   # by default, all script lines are interpreted as batch
   - echo This is batch
+  - ps: |
+      try {
+      Install-Product node $env:nodejs_version $env:platform
+      } catch {
+      echo "Unable to install node $env:nodejs_version, trying update..."
+      Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version) $env:platform
+      }
+  - node -v
+  - npm -g install npm@7
+  - npm config set msvs_version 2017
 
 #---------------------------------#
 #       build configuration       #
