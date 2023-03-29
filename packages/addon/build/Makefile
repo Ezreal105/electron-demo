@@ -337,7 +337,7 @@ endif
 
 quiet_cmd_regen_makefile = ACTION Regenerating $@
 cmd_regen_makefile = cd $(srcdir); /Users/lotus/lts-project/electron-demo/packages/app/node_modules/node-gyp/gyp/gyp_main.py -fmake --ignore-environment "-Dlibrary=shared_library" "-Dvisibility=default" "-Dnode_root_dir=/Users/lotus/.electron-gyp/23.2.0" "-Dnode_gyp_dir=/Users/lotus/lts-project/electron-demo/packages/app/node_modules/node-gyp" "-Dnode_lib_file=/Users/lotus/.electron-gyp/23.2.0/<(target_arch)/node.lib" "-Dmodule_root_dir=/Users/lotus/lts-project/electron-demo/packages/addon" "-Dnode_engine=v8" "--depth=." "-Goutput_dir=." "--generator-output=build" -I/Users/lotus/lts-project/electron-demo/packages/addon/build/config.gypi -I/Users/lotus/lts-project/electron-demo/packages/app/node_modules/node-gyp/addon.gypi -I/Users/lotus/.electron-gyp/23.2.0/include/node/common.gypi "--toplevel-dir=." binding.gyp
-Makefile: $(srcdir)/../app/node_modules/node-gyp/addon.gypi $(srcdir)/../../../../.electron-gyp/23.2.0/include/node/common.gypi $(srcdir)/node_modules/node-addon-api/node_api.gyp $(srcdir)/build/config.gypi $(srcdir)/binding.gyp
+Makefile: $(srcdir)/../../../../.electron-gyp/23.2.0/include/node/common.gypi $(srcdir)/binding.gyp $(srcdir)/build/config.gypi $(srcdir)/../app/node_modules/node-gyp/addon.gypi $(srcdir)/node_modules/node-addon-api/node_api.gyp
 	$(call do_cmd,regen_makefile)
 
 # "all" is a concatenation of the "all" targets from all the included

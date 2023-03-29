@@ -1,8 +1,8 @@
 #ifdef _WIN32
 #include <napi.h>
 #include <node_api.h>
-#include <Windows.h>
-#include <libloaderapi.h>
+// #include <Windows.h>
+// #include <libloaderapi.h>
 
 // bool loadLibrary(const char* dllPath, HMODULE& module) {
 //     module = LoadLibraryA(dllPath);
