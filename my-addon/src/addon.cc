@@ -1,5 +1,6 @@
 #include <napi.h>
 #include <Windows.h>
+#include <libloaderapi.h>
 
 bool loadLibrary(const char* dllPath, HMODULE& module) {
     module = LoadLibraryA(dllPath);
@@ -18,16 +19,10 @@ bool freeLibrary(HMODULE& module) {
     return false;
 }
 
-typedef int(*AddFunction)(int, int);
+typedef int(*GetDeviceCountFunction)();
 
-Napi::Value Add(const Napi::CallbackInfo& info) {
+Napi::Value IC_GetDeviceCount(const Napi::CallbackInfo& info) {
     Napi::Env env = info.Env();
-    if (info.Length() < 2 || !info[0].IsNumber() || !info[1].IsNumber()) {
-        Napi::TypeError::New(env, "Number expected").ThrowAsJavaScriptException();
-        return env.Null();
-    }
-    int a = info[0].As<Napi::Number>().Int32Value();
-    int b = info[1].As<Napi::Number>().Int32Value();
 
     HMODULE module;
     if (!loadLibrary("tis_udshl12_x64.dll", module)) {
@@ -35,14 +30,14 @@ Napi::Value Add(const Napi::CallbackInfo& info) {
         return env.Null();
     }
 
-    AddFunction addFunction = (AddFunction)GetProcAddress(module, "add");
-    if (addFunction == NULL) {
+    GetDeviceCountFunction getDeviceCountFunction = (GetDeviceCountFunction)GetProcAddress(module, "IC_GetDeviceCount");
+    if (getDeviceCountFunction == NULL) {
         Napi::TypeError::New(env, "Failed to get function").ThrowAsJavaScriptException();
         freeLibrary(module);
         return env.Null();
     }
 
-    int result = addFunction(a, b);
+    int result = getDeviceCountFunction();
 
     freeLibrary(module);
 
@@ -50,7 +45,7 @@ Napi::Value Add(const Napi::CallbackInfo& info) {
 }
 
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
-    exports.Set("add", Napi::Function::New(env, Add));
+    exports.Set("IC_GetDeviceCount", Napi::Function::New(env, IC_GetDeviceCount));
     return exports;
 }
 
