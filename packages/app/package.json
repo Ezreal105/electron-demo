@@ -42,6 +42,6 @@
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
-    "node-addon-api": "^6.0.0"
+    "my-addon": "file:../addon"
   }
 }

@@ -27,9 +27,11 @@
  */
 
 import "./index.css";
-// import m from "my-addon/build/Release/addon.node";
 
-// globalThis._m = m;
+// eslint-disable-next-line import/no-unresolved
+import ic from "my-addon/build/Release/addon.node";
+
+(globalThis as any)._ic = ic;
 
 console.log(
   '👋 This message is being logged by "renderer.js", included via webpack'
