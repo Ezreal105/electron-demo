@@ -43,7 +43,6 @@ image: Visual Studio 2019
 init:
   - git config --global core.autocrlf input
   - npm config set msvs_version 2019
-  - npm install -g pnpm
 
 # clone directory
 clone_folder: c:\projects\myproject

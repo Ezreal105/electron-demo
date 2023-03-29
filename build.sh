@@ -1,4 +1,4 @@
 #!/bin/bash
 echo building...
 
-pnpm -v
+npm -v
