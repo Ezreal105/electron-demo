@@ -37,12 +37,12 @@ max_jobs: 1
 #---------------------------------#
 
 # Build worker image (VM template)
-image: Visual Studio 2019
+image: Visual Studio 2015
 
 # scripts that are called at very beginning, before repo cloning
 init:
   - git config --global core.autocrlf input
-  - npm config set msvs_version 2019
+  - npm config set msvs_version 2015
 
 # clone directory
 clone_folder: c:\projects\myproject
