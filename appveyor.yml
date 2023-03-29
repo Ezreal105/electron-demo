@@ -91,7 +91,6 @@ install:
       Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version) $env:platform
       }
   - node -v
-  - npm -g install npm@7
   - npm config set msvs_version 2017
 
 #---------------------------------#
