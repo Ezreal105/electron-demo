@@ -33,6 +33,15 @@ import ic from "my-addon/build/Release/addon.node";
 
 (globalThis as any)._ic = ic;
 
+const infoDiv = document.createElement("div");
+const button = document.createElement("button");
+// 点击 button 时，调用ic.IC_GetDeviceCount 方法并把结果展示到 infoDiv 中
+button.addEventListener("click", () => {
+  infoDiv.innerText = ic.IC_GetDeviceCount();
+});
+document.body.appendChild(infoDiv);
+document.body.appendChild(button);
+
 console.log(
   '👋 This message is being logged by "renderer.js", included via webpack'
 );

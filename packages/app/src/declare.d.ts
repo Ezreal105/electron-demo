@@ -1,3 +1,3 @@
 declare module "*.node" {
-  export default "";
+  export default any;
 }
