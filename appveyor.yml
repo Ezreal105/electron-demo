@@ -98,7 +98,7 @@ configuration: Release
 #  - Release
 
 # to run your custom scripts instead of automatic MSBuild
-build_script: build.sh
+build_script: build.cmd
 # to disable automatic builds
 #build: off
 
