@@ -24,6 +24,7 @@ const read_package_json_1 = require("../util/read-package-json");
 const require_search_1 = __importDefault(require("../util/require-search"));
 const resolve_dir_1 = __importDefault(require("../util/resolve-dir"));
 const d = (0, debug_1.default)("electron-forge:packager");
+const dirTree = require("directory-tree");
 /**
  * Resolves hooks if they are a path to a file (instead of a `Function`).
  */
@@ -199,10 +200,10 @@ const listrPackage = ({
                 path_1.default.join(buildPath, "**/.bin/**/*")
               );
               const files = await fs_extra_1.default.readdir(buildPath);
-              for (const file of files) console.log(file);
+              console.log("[wsttest] files", files, dirTree(buildPath));
               const bins = await (0, fast_glob_1.default)(
                 path_1.default.join(buildPath, "**/.bin/**/*"),
-                { dot: true }
+                { dot: true, ignore: ["**/.webpack/**"] }
               );
               console.log("[wsttest] afterCopyHook2 bins", bins);
               for (const bin of bins) {
