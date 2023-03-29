@@ -42,7 +42,7 @@ image: Visual Studio 2017
 environment:
   matrix:
     # node.js
-    - nodejs_version: "12"
+    - nodejs_version: "16"
 
 # scripts that are called at very beginning, before repo cloning
 init:
