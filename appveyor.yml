@@ -41,8 +41,7 @@ image: Visual Studio 2015
 
 environment:
   matrix:
-    # node.js
-    - nodejs_version: "16"
+    - nodejs_version: "18"
 
 # scripts that are called at very beginning, before repo cloning
 init:
@@ -50,12 +49,6 @@ init:
 
 # clone directory
 clone_folder: c:\projects\myproject
-
-# fetch repository as zip archive
-shallow_clone: true # default is "false"
-
-# set clone depth
-clone_depth: 5 # clone entire repository history if not defined
 
 # environment:
 #  global:
