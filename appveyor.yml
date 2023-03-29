@@ -92,7 +92,6 @@ install:
       }
   - node -v
   - npm config set msvs_version 2015
-  - npm install -g windows-build-tools
   - npm install -g node-addon-api
 
 #---------------------------------#

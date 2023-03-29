@@ -6,11 +6,11 @@
   "engines": {
     "node": ">=10.0.0"
   },
-  "gypfile": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node-gyp configure && node-gyp build",
-    "clean": "node-gyp clean"
+    "clean": "node-gyp clean",
+    "install": "echo 11"
   },
   "author": "",
   "license": "ISC",
