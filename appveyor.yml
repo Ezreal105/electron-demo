@@ -92,6 +92,7 @@ install:
       }
   - node -v
   - npm config set msvs_version 2015
+  - npm clean cache -f
 
 #---------------------------------#
 #       build configuration       #
