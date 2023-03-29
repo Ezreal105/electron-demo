@@ -106,3 +106,6 @@ build_script:
 #---------------------------------#
 #      artifacts configuration    #
 #---------------------------------#
+artifacts:
+  - path: "my-app/out/make/*.*"
+    name: "Electron-Demo"
