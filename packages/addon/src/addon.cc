@@ -46,8 +46,19 @@
 //     return Napi::Number::New(env, result);
 // }
 
+Napi::Value IC_GetDeviceCount(const Napi::CallbackInfo& info) {
+    Napi::Env env = info.Env();
+
+    return Napi::Number::New(env, -1);
+}
+
 Napi::Object Init(Napi::Env env, Napi::Object exports) {
-    // exports.Set("IC_GetDeviceCount", Napi::Function::New(env, IC_GetDeviceCount));
+    exports.Set("IC_GetDeviceCount", Napi::Function::New(env, IC_GetDeviceCount));
+    return exports;
+}
+
+Napi::Object Init(Napi::Env env, Napi::Object exports) {
+    exports.Set("IC_GetDeviceCount", Napi::Function::New(env, IC_GetDeviceCount));
     return exports;
 }
 
