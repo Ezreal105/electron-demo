@@ -9,8 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node-gyp configure && node-gyp build",
-    "clean": "node-gyp clean",
-    "install": "echo 11"
+    "clean": "node-gyp clean"
   },
   "author": "",
   "license": "ISC",

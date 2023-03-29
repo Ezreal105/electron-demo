@@ -377,17 +377,16 @@
     "xcode_version": "11.0",
     "nodedir": "/Users/lotus/Library/Caches/node-gyp/18.10.0",
     "standalone_static_library": 1,
-    "metrics_registry": "https://registry.npm.taobao.org/",
-    "global_prefix": "/Users/lotus/.nvm/versions/node/v18.10.0",
+    "metrics_registry": "https://registry.npmjs.org/",
+    "global_prefix": "/Users/lotus/lts-project/electron-demo/packages/addon",
     "email": "m15994252670@tom.com",
-    "registry": "https://registry.npm.taobao.org/",
-    "local_prefix": "/Users/lotus/lts-project/electron-demo",
-    "globalconfig": "/Users/lotus/.nvm/versions/node/v18.10.0/etc/npmrc",
+    "local_prefix": "/Users/lotus/lts-project/electron-demo/packages/addon",
+    "globalconfig": "/Users/lotus/lts-project/electron-demo/packages/addon/etc/npmrc",
     "userconfig": "/Users/lotus/.npmrc",
     "init_module": "/Users/lotus/.npm-init.js",
     "node_gyp": "/Users/lotus/.nvm/versions/node/v18.10.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js",
     "cache": "/Users/lotus/.npm",
-    "user_agent": "npm/8.19.2 node/v18.10.0 darwin x64 workspaces/true",
-    "prefix": "/Users/lotus/.nvm/versions/node/v18.10.0"
+    "user_agent": "npm/8.19.2 node/v18.10.0 darwin x64 workspaces/false",
+    "prefix": "/Users/lotus/lts-project/electron-demo/packages/addon"
   }
 }
