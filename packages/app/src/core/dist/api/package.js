@@ -447,6 +447,7 @@ const listrPackage = ({
                                   : _a.pop()) === null || _b === void 0
                                 ? void 0
                                 : _b(task);
+                              console.log("[wsttest] Fuck 1", target);
                               await addSignalAndWait(signalRebuildDone, target);
                             },
                             options: {
