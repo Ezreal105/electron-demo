@@ -381,13 +381,13 @@
     "global_prefix": "/Users/lotus/.nvm/versions/node/v18.10.0",
     "email": "m15994252670@tom.com",
     "registry": "http://npm.lotuscars.com.cn:30040/",
-    "local_prefix": "/Users/lotus/lts-project/electron-demo",
+    "local_prefix": "/Users/lotus/lts-project/electron-demo/packages/addon",
     "globalconfig": "/Users/lotus/.nvm/versions/node/v18.10.0/etc/npmrc",
     "userconfig": "/Users/lotus/.npmrc",
     "init_module": "/Users/lotus/.npm-init.js",
     "node_gyp": "/Users/lotus/.nvm/versions/node/v18.10.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js",
     "cache": "/Users/lotus/.npm",
-    "user_agent": "npm/8.19.2 node/v18.10.0 darwin x64 workspaces/true",
+    "user_agent": "npm/8.19.2 node/v18.10.0 darwin x64 workspaces/false",
     "prefix": "/Users/lotus/.nvm/versions/node/v18.10.0"
   }
 }
