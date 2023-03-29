@@ -14,17 +14,6 @@ version: 1.0.{build}
 # you can use {branch} name in version format too
 # version: 1.0.{build}-{branch}
 
-# branches to build
-branches:
-  # whitelist
-  only:
-    - master
-    - production
-
-  # blacklist
-  except:
-    - gh-pages
-
 # Skipping commits affecting specific files (GitHub only). More details here: /docs/appveyor-yml
 #skip_commits:
 #  files:
@@ -107,40 +96,12 @@ configuration: Release
 #  - Debug
 #  - Release
 
-# scripts to run before build
-before_build:
-  - sh: >-
-      cd my-addon &
-      npm install &
-      cd ../my-app &
-      npm install
-
 # to run your custom scripts instead of automatic MSBuild
 build_script:
-
-# scripts to run after build (working directory and environment changes are persisted from the previous steps)
-after_build:
-
-# scripts to run *after* solution is built and *before* automatic packaging occurs (web apps, NuGet packages, Azure Cloud Services)
-before_package:
-
+  - sh: echo hh
 # to disable automatic builds
 #build: off
 
 #---------------------------------#
 #      artifacts configuration    #
 #---------------------------------#
-
-artifacts:
-  # pushing a single file
-  - path: test.zip
-
-  # pushing a single file with environment variable in path and "Deployment name" specified
-  - path: MyProject\bin\$(configuration)
-    name: myapp
-
-  # pushing entire folder as a zip archive
-  - path: logs
-
-  # pushing all *.nupkg files in build directory recursively
-  - path: '**\*.nupkg'
