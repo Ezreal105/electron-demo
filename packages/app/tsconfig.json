@@ -16,5 +16,5 @@
     }
   },
   "include": ["src/**/*"],
-  "exclude": ["src/**/*.node", "src/core-utils/**/*"]
+  "exclude": ["src/**/*.node", "src/core-utils/**/*", "src/core/**/*"]
 }

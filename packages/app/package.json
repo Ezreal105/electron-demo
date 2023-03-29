@@ -20,6 +20,7 @@
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
     "@electron-forge/core-utils": "file:./src/core-utils",
+    "@electron-forge/core": "file:./src/core",
     "@electron-forge/maker-deb": "^6.0.5",
     "@electron-forge/maker-rpm": "^6.0.5",
     "@electron-forge/maker-squirrel": "^6.0.5",
